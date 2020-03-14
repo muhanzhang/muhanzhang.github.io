@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0044)https://www.cse.wustl.edu/~ychen/HashedNets/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<title>SEAL</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+div > img {
+    width: auto;
+    height : auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~ this fixed width container surrounds the other divs ~~ */
+.container {
+	width: 960px;
+	background-color: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	background-color: #ADB96E;
+}
+
+/* ~~ This is the layout information. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the div. The elements within this div have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+*/
+
+.content {
+
+	padding: 10px 0;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #CCC49F;
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+-->
+</style>
+<script async="" src="./HashedNets_files/analytics.js.download"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40006961-1', 'wustl.edu');
+  ga('send', 'pageview');
+
+  </script>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="https://www.cse.wustl.edu/~ychen/SEAL_website/#"><img src="https://www.cse.wustl.edu/~ychen/SEAL_website/" alt="" name="Insert_logo" width="180" height="90" id="Insert_logo" style="background-color: #C6D580; display:block;"></a> 
+    <!-- end .header --></div>
+  <div class="content">
+    <h1>SEAL (learning from Subgraphs, Embeddings, and Attributes for Link prediction)</h1>
+     <br>
+    <center> <img src="./seal.png" alt="seal" width="95%"></center>
+     <br>
+     <br>
+    <p>Link prediction is a key problem for network-structured data. Link prediction heuristics use some score functions, such as common neighbors and Katz index, to measure the likelihood of links.
+ They have obtained wide practical uses due to their simplicity, interpretability, and (often) scalability. However, heuristic methods have strong assumptions on when two nodes are likely to have a link, which limits their effectiveness in networks where these assumptions fail. In this regard, a more reasonable way should be learning suitable "heuristics" from networks instead of using predefined ones.
+     </p>
+
+     <p>We propose SEAL, a novel link prediction framework which automatically learn heuristics that suit the specific networks. SEAL extracts a local subgraph around each target link as its data representation, and learns a function mapping the subgraph patterns to link existence based on Graph Neural Networks (GNN). SEAL is also able to learn from node embeddings and node attributes as the additional information to the subgraph patterns. SEAL (learning from Subgraphs, Embeddings, and Attributes for Link prediction) has superior performance than existing link prediction methods, such as heuristics, latent feature methods, and embedding methods.
+     </p>
+    
+    <h2>  <a target="_blank" href="https://github.com/muhanzhang/SEAL/archive/master.zip">Code Download</a> </h2>
+    <p>For any questions or bug reports, please contact <a target="_blank" href="http://www.cse.wustl.edu/~ychen/">Yixin Chen</a> and <a target="_blank" href="http://www.cse.wustl.edu/~muhan/">Muhan Zhang</a>.</p>
+    <h2>Reference</h2>
+    <p> M. Zhang and Y. Chen, <em>Link Prediction Based on Graph Neural Networks</em>, Advances in Neural Information Processing Systems (NIPS-18). Spotlight presentation. (<a target="_blank" href="http://arxiv.org/pdf/1802.09691.pdf">PDF</a>)</p>
+    <h2>Acknowledgement</h2>
+    <p>Muhan and Yixin are supported by NSF grants CCF-1215302, IIS-1343896, DBI-1356669, CNS-1320921, and a Microsoft Research New Faculty Fellowship.</p>
+    
+    <!-- end .content --></div>
+  <div class="footer">
+    <p>&nbsp;</p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+
+
+</body></html>
